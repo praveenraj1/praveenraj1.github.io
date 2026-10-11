@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Praveen Raj V — Data Engineer &amp; Platform Developer</title>
+<title>Praveen Raj V | Data Engineer & Backend Developer</title>
+<meta name="description" content="Portfolio of Praveen Raj V, a data engineer and backend developer experienced in data pipelines, Apache Kafka, Python, FastAPI, .NET, and platform engineering.">
+<meta name="author" content="Praveen Raj V">
+<meta name="theme-color" content="#0c1a2b">
+<link rel="canonical" href="https://praveenraj.world/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Praveen Raj V | Data Engineer & Backend Developer">
+<meta property="og:description" content="Building reliable data pipelines, backend services, and modern platforms.">
+<meta property="og:url" content="https://praveenraj.world/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -112,13 +120,68 @@
   .contact-links a:hover{border-color:var(--amber);color:var(--amber)}
 
   footer{padding:30px 28px;font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--dim2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  /* 2026 portfolio refresh — responsive and accessible */
+  :root{--content:1120px}
+  body{overflow-x:hidden}
+  .wrap{max-width:var(--content)}
+  header.top{max-width:var(--content);position:relative;gap:24px}
+  header.top nav{display:flex;align-items:center;gap:19px;flex-wrap:wrap}
+  header.top nav a{margin:0;transition:color .2s}
+  header.top .id{white-space:nowrap}
+  .hero{max-width:var(--content);margin:0 auto;padding-top:70px;padding-bottom:90px}
+  .hero-grid{gap:65px}
+  h1{font-size:clamp(2.5rem,4.8vw,4.5rem);max-width:16ch;letter-spacing:-.035em}
+  .lede{font-size:1.04rem}
+  section{max-width:var(--content);margin:0 auto;padding-top:86px;padding-bottom:86px;scroll-margin-top:28px}
+  .section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+  .section-heading h2{margin:0;font-size:clamp(1.7rem,3vw,2.5rem)}
+  .section-intro{color:var(--dim2);font-size:.73rem;margin:0}
+  .accent{color:var(--amber)}
+  .about-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,1fr);gap:55px;align-items:start}
+  .about-copy p{color:var(--dim);font-size:1.08rem;line-height:1.85;margin:0 0 22px}
+  .about-copy strong{color:var(--paper);font-weight:600}
+  .about-aside{border:1px solid var(--line);border-radius:8px;background:rgba(15,34,56,.8);padding:25px}
+  .aside-label,.work-number{font-size:.72rem;color:var(--amber)}
+  .aside-label{margin-bottom:12px}
+  .fact{padding:15px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:5px}
+  .fact:last-child{border:0;padding-bottom:0}
+  .fact span{font-family:'IBM Plex Mono',monospace;font-size:.73rem;color:var(--dim2)}
+  .fact strong{font-size:1rem;font-weight:600}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 25px}
+  .btn{font-family:'IBM Plex Mono',monospace;font-size:.78rem;display:inline-flex;align-items:center;gap:15px;padding:14px 18px;border:1px solid var(--amber);border-radius:5px;text-decoration:none;transition:transform .2s,background .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--amber);color:var(--navy);font-weight:600}
+  .btn-outline{color:var(--paper);border-color:var(--line);background:var(--navy2)}
+  .btn-outline:hover{border-color:var(--amber);color:var(--amber)}
+  .work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .work-card{padding:26px;border:1px solid var(--line);border-radius:8px;background:rgba(15,34,56,.67);transition:border-color .2s,transform .2s}
+  .work-card:hover{border-color:var(--cyan);transform:translateY(-3px)}
+  .work-card h3{font-size:1.3rem;line-height:1.3;margin:18px 0 12px}
+  .work-card p{color:var(--dim);line-height:1.7;margin:0 0 20px;font-size:.97rem}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chips span{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--cyan);border:1px solid var(--line);padding:6px 9px;border-radius:4px}
+  .schema{border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.12)}
+  .node{border-radius:5px}
+  .skill-table{border-radius:8px}
+  .contact-links a{border-radius:6px}
+  footer{border-top:1px solid var(--line)}
+  footer a{color:var(--dim);text-decoration:none}
+  .skip-link{position:absolute;left:12px;top:-60px;background:var(--amber);color:var(--navy);padding:10px;z-index:10}
+  .skip-link:focus{top:10px}
+  @media(max-width:860px){.hero{padding-top:42px}.hero-grid{gap:40px}.about-grid{grid-template-columns:1fr;gap:20px}}
+  @media(max-width:640px){header.top{padding:22px 20px;align-items:flex-start;flex-direction:column;gap:18px}header.top nav{gap:13px;font-size:.75rem}.hero{padding:40px 20px 65px}section{padding:64px 20px}.work-grid{grid-template-columns:1fr}.hero-grid{grid-template-columns:minmax(0,1fr)}.schema{padding:18px}.meta-row{gap:12px;overflow-wrap:anywhere}.contact-links a{max-width:100%;overflow-wrap:anywhere}h1{font-size:clamp(2.3rem,9vw,3.2rem)}.about-aside{padding:20px}footer{padding:25px 20px}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 </style>
 </head>
-<body>
+<body id="top">
+<a class="skip-link mono" href="#about">Skip to content</a>
 
 <header class="top">
   <span class="id mono">PR<b>V</b> / data-engineer</span>
-  <nav>
+  <nav aria-label="Main navigation">
+    <a href="#about">about</a>
+    <a href="#projects">work</a>
     <a href="#stack">stack</a>
     <a href="#experience">experience</a>
     <a href="#education">education</a>
@@ -131,7 +194,8 @@
     <div>
       <p class="tag">data engineer · backend &amp; platform developer</p>
       <h1>I design the <em>pipelines and systems</em> that keep platforms running underneath.</h1>
-      <p class="lede">Praveen Raj V — four years at SPAN Technology Services, moved from .NET application development into data engineering: ingestion, streaming, lakehouse platforms, and the backend services that connect them.</p>
+      <p class="lede">I'm Praveen Raj V, a data engineer and backend developer working across streaming pipelines, data platforms, APIs, and application modernization. I connect complex systems with practical, maintainable engineering.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#contact">Get in touch <span aria-hidden="true">→</span></a></div>
       <div class="meta-row">
         <span>Erode, Tamil Nadu, India</span>
         <a href="tel:+917339379924">+91 73393 79924</a>
@@ -164,8 +228,38 @@
   </div>
 </div>
 
+
+<section id="about" aria-labelledby="about-title">
+  <span class="idx mono">01 — introduction</span>
+  <div class="section-heading"><h2 id="about-title">A little about me<span class="accent">.</span></h2><p class="section-intro mono">Developer mindset. Data engineering focus.</p></div>
+  <div class="about-grid">
+    <div class="about-copy">
+      <p>I’m a <strong>Data Engineer and Software Developer</strong> with more than four years of experience at SPAN Technology Services. I started as a Junior .NET Developer in February 2022 and moved into data engineering in August 2023.</p>
+      <p>My work spans data ingestion, streaming, lakehouse and warehouse technologies, backend APIs, payment integrations, and modernizing existing applications. I enjoy connecting the pieces — from the database and data pipeline to the service and user interface.</p>
+      <p>I’m especially interested in <strong>reliable systems, open-source tools, and practical architecture</strong>: understanding a problem, choosing the right technology, and making it work well in a real product.</p>
+    </div>
+    <aside class="about-aside" aria-label="Professional overview">
+      <div class="aside-label mono">// quick.profile</div>
+      <div class="fact"><span>Current focus</span><strong>Data engineering + backend</strong></div>
+      <div class="fact"><span>Experience since</span><strong>February 2022</strong></div>
+      <div class="fact"><span>Based in</span><strong>Tamil Nadu, India</strong></div>
+      <div class="fact"><span>Working style</span><strong>Build · Integrate · Improve</strong></div>
+    </aside>
+  </div>
+</section>
+<section id="projects" aria-labelledby="projects-title">
+  <span class="idx mono">02 — selected work</span>
+  <div class="section-heading"><h2 id="projects-title">What I work on<span class="accent">.</span></h2><p class="section-intro mono">Representative areas of experience — not public client case studies.</p></div>
+  <div class="work-grid">
+    <article class="work-card"><span class="work-number mono">01 / DATA PLATFORMS</span><h3>Streaming &amp; data pipelines</h3><p>Ingestion, transformation, batch processing, and streaming integrations that move data between systems.</p><div class="chips"><span>Kafka</span><span>ETL / ELT</span><span>SQL</span></div></article>
+    <article class="work-card"><span class="work-number mono">02 / PLATFORM ENGINEERING</span><h3>Lakehouse &amp; warehouse systems</h3><p>Working with data platform tooling, source-to-target mapping, modeling, and evaluating open-source solutions.</p><div class="chips"><span>Hudi</span><span>Doris</span><span>Trino</span><span>DataHub</span></div></article>
+    <article class="work-card"><span class="work-number mono">03 / BACKEND</span><h3>APIs &amp; integrations</h3><p>Developing backend services and REST APIs, supporting internal tools and payment integrations.</p><div class="chips"><span>Python</span><span>FastAPI</span><span>Stripe</span><span>Cybersource</span></div></article>
+    <article class="work-card"><span class="work-number mono">04 / MODERNIZATION</span><h3>Application development</h3><p>Maintaining existing software and migrating traditional HTML interfaces to modern React and Remix applications.</p><div class="chips"><span>.NET / C#</span><span>React</span><span>Remix</span></div></article>
+  </div>
+</section>
+
 <section id="stack">
-  <span class="idx mono">01 — technical stack</span>
+  <span class="idx mono">03 — technical stack</span>
   <h2>What I build with</h2>
   <div class="skill-table">
     <div class="skill-row">
@@ -204,7 +298,7 @@
 </section>
 
 <section id="experience">
-  <span class="idx mono">02 — experience</span>
+  <span class="idx mono">04 — experience</span>
   <h2>Where I've worked</h2>
 
   <div class="job">
@@ -240,7 +334,7 @@
 </section>
 
 <section id="education">
-  <span class="idx mono">03 — education &amp; certifications</span>
+  <span class="idx mono">05 — education &amp; certifications</span>
   <h2>Background</h2>
   <div class="two-col">
     <div>
@@ -268,9 +362,9 @@
 </section>
 
 <section id="contact" class="contact">
-  <span class="idx mono">04 — contact</span>
-  <h2>Building a data platform? Let's talk.</h2>
-  <p class="lede" style="max-width:48ch">Open to data engineering and backend platform roles — reach out directly.</p>
+  <span class="idx mono">06 — contact</span>
+  <h2>Let’s build something <em>useful.</em></h2>
+  <p class="lede" style="max-width:48ch">Interested in data engineering, backend systems, or a technical collaboration? I’d be glad to connect.</p>
   <div class="contact-links">
     <a href="mailto:praveenrajvengudu@gmail.com">✉ praveenrajvengudu@gmail.com</a>
     <a href="tel:+917339379924">☎ +91 73393 79924</a>
@@ -279,9 +373,10 @@
   </div>
 </section>
 
-<footer class="mono">
+<footer class="mono wrap">
   <span>© 2026 Praveen Raj V</span>
-  <span>Erode, Tamil Nadu, India</span>
+  <span>Built with HTML &amp; CSS · Hosted on GitHub Pages</span>
+  <a href="#top">Back to top ↑</a>
 </footer>
 
 </body>
