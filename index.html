@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Praveen Raj V — Data Engineer &amp; Platform Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0c1a2b; --navy2:#0f2238; --grid:rgba(120,170,210,0.09);
+    --paper:#eef3f7; --dim:#8fa3b8; --dim2:#5d7284;
+    --amber:#f2a93c; --cyan:#6fc3d6; --line:#1d3350;
+    --ok:#7fd6a6;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--navy); color:var(--paper);
+    font-family:'Fraunces',serif;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 42px 42px;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace}
+  a{color:var(--cyan)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+  ::selection{background:var(--amber);color:var(--navy)}
+
+  .wrap{max-width:980px;margin:0 auto;padding:0 28px}
+
+  header.top{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:26px 28px;max-width:980px;margin:0 auto;
+    font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--dim);
+  }
+  header.top .id{color:var(--paper)}
+  header.top .id b{color:var(--amber)}
+  header.top nav a{margin-left:22px;text-decoration:none;color:var(--dim)}
+  header.top nav a:hover{color:var(--cyan)}
+
+  /* ---- hero: schema diagram ---- */
+  .hero{padding:40px 28px 10px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+
+  .tag{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--amber);margin:0 0 16px}
+  .tag::before{content:'// ';color:var(--dim2)}
+  h1{font-size:clamp(2.1rem,4.4vw,3.2rem);line-height:1.12;font-weight:600;margin:0 0 20px;max-width:15ch}
+  h1 em{font-style:italic;color:var(--amber);font-weight:500}
+  .lede{color:var(--dim);font-size:1.05rem;line-height:1.65;max-width:52ch;margin:0 0 28px}
+  .meta-row{display:flex;flex-wrap:wrap;gap:18px;font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--dim2)}
+  .meta-row a{color:var(--dim)}
+  .meta-row a:hover{color:var(--cyan)}
+
+  /* schema diagram */
+  .schema{position:relative;border:1px solid var(--line);border-radius:4px;background:rgba(15,34,56,.5);padding:26px}
+  .schema .caption{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--dim2);margin-bottom:16px}
+  .node{
+    border:1px solid var(--line);border-radius:4px;background:var(--navy2);
+    padding:10px 14px;margin-bottom:10px;position:relative;
+  }
+  .node .nhead{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--amber);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+  .node .nhead .dot{width:6px;height:6px;border-radius:50%;background:var(--ok)}
+  .node .nrow{font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:var(--dim);padding:2px 0}
+  .connector{height:16px;width:1px;background:var(--line);margin-left:20px}
+
+  /* ---- sections ---- */
+  section{padding:70px 28px;border-top:1px solid var(--line)}
+  .idx{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--amber);display:block;margin-bottom:22px}
+  .idx::before{content:'§ '}
+  h2{font-size:1.5rem;font-weight:600;margin:0 0 28px}
+
+  /* skills as a schema-ish key/value table */
+  .skill-table{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+  .skill-row{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid var(--line)}
+  .skill-row:last-child{border-bottom:none}
+  .skill-row .k{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--amber);padding:16px 18px;background:rgba(15,34,56,.5);border-right:1px solid var(--line)}
+  .skill-row .v{padding:16px 18px;color:var(--dim);font-size:.92rem;font-family:'IBM Plex Mono',monospace;line-height:1.7}
+  @media(max-width:640px){.skill-row{grid-template-columns:1fr}.skill-row .k{border-right:none;border-bottom:1px solid var(--line)}}
+
+  /* experience timeline */
+  .job{display:grid;grid-template-columns:180px 1fr;gap:28px;padding:30px 0;border-bottom:1px solid var(--line)}
+  .job:first-of-type{border-top:1px solid var(--line)}
+  @media(max-width:640px){.job{grid-template-columns:1fr;gap:10px}}
+  .job .period{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--dim2);padding-top:4px}
+  .job .period .current{color:var(--ok)}
+  .job h3{margin:0 0 4px;font-size:1.15rem;font-weight:600}
+  .job .org{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--cyan);margin-bottom:14px}
+  .job ul{margin:0;padding-left:18px;color:var(--dim);font-size:.95rem;line-height:1.7}
+  .job li{margin-bottom:8px}
+  .job li::marker{color:var(--amber)}
+
+  /* education / certs grid */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  @media(max-width:700px){.two-col{grid-template-columns:1fr}}
+  .ed-item{margin-bottom:20px}
+  .ed-item h4{margin:0 0 4px;font-size:1rem;font-weight:600}
+  .ed-item span{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--dim2)}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--dim);
+    border:1px solid var(--line);border-radius:100px;padding:8px 14px;margin:0 8px 8px 0}
+  .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--amber)}
+
+  /* contact */
+  .contact h2{max-width:16ch;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15}
+  .contact h2 em{font-style:italic;color:var(--amber)}
+  .contact-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .contact-links a{font-family:'IBM Plex Mono',monospace;font-size:.88rem;border:1px solid var(--line);border-radius:4px;
+    padding:12px 18px;text-decoration:none;color:var(--paper);transition:.2s;display:inline-flex;align-items:center;gap:8px}
+  .contact-links a:hover{border-color:var(--amber);color:var(--amber)}
+
+  footer{padding:30px 28px;font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--dim2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="id mono">PR<b>V</b> / data-engineer</span>
+  <nav>
+    <a href="#stack">stack</a>
+    <a href="#experience">experience</a>
+    <a href="#education">education</a>
+    <a href="#contact">contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="tag">data engineer · backend &amp; platform developer</p>
+      <h1>I design the <em>pipelines and systems</em> that keep platforms running underneath.</h1>
+      <p class="lede">Praveen Raj V — four years at SPAN Technology Services, moved from .NET application development into data engineering: ingestion, streaming, lakehouse platforms, and the backend services that connect them.</p>
+      <div class="meta-row">
+        <span>Erode, Tamil Nadu, India</span>
+        <a href="tel:+917339379924">+91 73393 79924</a>
+        <a href="mailto:praveenrajvengudu@gmail.com">praveenrajvengudu@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="schema">
+      <p class="caption mono">// stack.schema</p>
+      <div class="node">
+        <div class="nhead"><span class="dot"></span>ingestion / streaming</div>
+        <div class="nrow">Kafka · Flink · Airflow</div>
+      </div>
+      <div class="connector"></div>
+      <div class="node">
+        <div class="nhead"><span class="dot"></span>lakehouse / warehouse</div>
+        <div class="nrow">Hudi · Doris · Trino/Presto · MinIO</div>
+      </div>
+      <div class="connector"></div>
+      <div class="node">
+        <div class="nhead"><span class="dot"></span>services / api</div>
+        <div class="nrow">Python · FastAPI · .NET/C# · Node.js</div>
+      </div>
+      <div class="connector"></div>
+      <div class="node">
+        <div class="nhead"><span class="dot"></span>interface</div>
+        <div class="nrow">React · Next.js · Remix</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="stack">
+  <span class="idx mono">01 — technical stack</span>
+  <h2>What I build with</h2>
+  <div class="skill-table">
+    <div class="skill-row">
+      <div class="k">Data engineering</div>
+      <div class="v">ETL/ELT pipelines, batch &amp; streaming data, ingestion and transformation, warehouse/lakehouse design, data modelling, data quality, DataHub</div>
+    </div>
+    <div class="skill-row">
+      <div class="k">Data technologies</div>
+      <div class="v">Apache Kafka, Apache Flink, Apache Airflow, Apache Hudi, Apache Doris, Trino/Presto, MinIO</div>
+    </div>
+    <div class="skill-row">
+      <div class="k">Backend &amp; APIs</div>
+      <div class="v">Python, FastAPI, REST APIs, .NET/C#, ASP.NET MVC, Node.js, Fastify, authentication fundamentals</div>
+    </div>
+    <div class="skill-row">
+      <div class="k">Frontend &amp; modernization</div>
+      <div class="v">React, Next.js, Remix, JavaScript, HTML/CSS — migrating legacy HTML interfaces to React-based applications</div>
+    </div>
+    <div class="skill-row">
+      <div class="k">Payments &amp; integrations</div>
+      <div class="v">Stripe, Cybersource, third-party API integration, reusable internal developer tools</div>
+    </div>
+    <div class="skill-row">
+      <div class="k">Databases &amp; tools</div>
+      <div class="v">PostgreSQL, MS SQL Server, MySQL, MongoDB, Redis, SQL/PL-SQL, Git/GitHub, Docker, AWS fundamentals</div>
+    </div>
+    <div class="skill-row">
+      <div class="k">Adaptability &amp; architecture</div>
+      <div class="v">Comfortable picking up and converting between tech stacks on short notice, evaluating and implementing new tools inside existing systems, and designing project architecture and end-to-end structure from scratch — source-to-target mapping, data flow, and system design for new builds, not just maintaining existing ones</div>
+    </div>
+    <div class="skill-row">
+      <div class="k">Open-source tooling</div>
+      <div class="v">Evaluate open-source tools against project needs, adapt and reuse them inside existing systems, and fork projects to extend functionality that isn't available out of the box — maintaining those forks for further development as requirements evolve</div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <span class="idx mono">02 — experience</span>
+  <h2>Where I've worked</h2>
+
+  <div class="job">
+    <div class="period">Aug 2023 — <span class="current">present</span></div>
+    <div>
+      <h3>Data Engineer / Software Development</h3>
+      <div class="org">SPAN Technology Services, Erode</div>
+      <ul>
+        <li>Develop and maintain data engineering workflows — ingestion, transformation, batch processing, and streaming-oriented integrations.</li>
+        <li>Contribute to data platform and warehouse initiatives: data modelling, source-to-target mapping, and evaluating open-source tools for implementation.</li>
+        <li>Work with Apache Kafka, Apache Hudi, Apache Doris, Trino/Presto, and DataHub depending on project requirements.</li>
+        <li>Build and maintain backend services and REST APIs using Python and FastAPI, connecting data services to application layers.</li>
+        <li>Maintain payment integrations using Stripe and Cybersource, and support reusable internal tools.</li>
+        <li>Modernize application interfaces, including migrating existing HTML-based views to React and Remix.</li>
+        <li>Assess open-source solutions, adapt them to project needs, and troubleshoot implementation issues.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="period">Feb 2022 — Aug 2023</div>
+    <div>
+      <h3>Junior .NET Developer / Software Developer</h3>
+      <div class="org">SPAN Technology Services, Erode</div>
+      <ul>
+        <li>Developed and maintained application features using C#, .NET, ASP.NET MVC, and REST API patterns.</li>
+        <li>Implemented application logic and database operations across SQL-based databases.</li>
+        <li>Supported bug fixing, issue investigation, and feature enhancements alongside the team.</li>
+        <li>Built a foundation in backend development, API integration, and production application support.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <span class="idx mono">03 — education &amp; certifications</span>
+  <h2>Background</h2>
+  <div class="two-col">
+    <div>
+      <div class="ed-item">
+        <h4>B.E., Computer Science and Engineering</h4>
+        <span>IFET Institute of Technology, Pondicherry · 2016–2020</span>
+      </div>
+      <div class="ed-item">
+        <h4>Networking Engineering Training</h4>
+        <span>Sansbound Networking School, Chennai · 6 months</span>
+      </div>
+      <div class="ed-item">
+        <h4>.NET / C# Training</h4>
+        <span>SLA Institute · 6 months</span>
+      </div>
+    </div>
+    <div>
+      <div class="badge"><span class="dot"></span>CCNA — Sansbound Networking School</div>
+      <div class="badge"><span class="dot"></span>.NET Framework — SLA Institute</div>
+      <div class="badge"><span class="dot"></span>Basic Coding in JavaScript — Udemy</div>
+      <div class="badge"><span class="dot"></span>Python for Data Engineering — Udemy</div>
+      <div class="badge" style="border-color:var(--amber);color:var(--amber)"><span class="dot"></span>SPAN Super Star Award — 2024</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <span class="idx mono">04 — contact</span>
+  <h2>Building a data platform? Let's talk.</h2>
+  <p class="lede" style="max-width:48ch">Open to data engineering and backend platform roles — reach out directly.</p>
+  <div class="contact-links">
+    <a href="mailto:praveenrajvengudu@gmail.com">✉ praveenrajvengudu@gmail.com</a>
+    <a href="tel:+917339379924">☎ +91 73393 79924</a>
+    <a href="https://www.linkedin.com/in/praveen-raj-vengudusamy-480607157" target="_blank" rel="noopener">in LinkedIn</a>
+    <a href="https://github.com/praveenraj1" target="_blank" rel="noopener">⌥ GitHub</a>
+  </div>
+</section>
+
+<footer class="mono">
+  <span>© 2026 Praveen Raj V</span>
+  <span>Erode, Tamil Nadu, India</span>
+</footer>
+
+</body>
+</html>
