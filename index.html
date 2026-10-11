@@ -14,7 +14,9 @@
 <meta property="og:url" content="https://praveenraj.world/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Load decorative web fonts without delaying the first paint. -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"></noscript>
 <style>
   :root{
     --navy:#0c1a2b; --navy2:#0f2238; --grid:rgba(120,170,210,0.09);
@@ -481,6 +483,9 @@ header.top nav a, .mobile-menu-toggle, .btn, .contact-links a { -webkit-tap-high
   .js-motion .reveal, .js-motion .reveal.is-visible { opacity:1!important; transform:none!important; }
 }
 
+.ed-item h3 { margin:0 0 4px; font-size:1rem; font-weight:600; }
+/* Stable fallback font metrics and visible first paint. */
+html:not(.js-motion) .reveal { opacity:1; transform:none; }
 </style>
 </head>
 <body id="top">
@@ -693,15 +698,15 @@ header.top nav a, .mobile-menu-toggle, .btn, .contact-links a { -webkit-tap-high
   <div class="two-col">
     <div>
       <div class="ed-item">
-        <h4>B.E., Computer Science and Engineering</h4>
+        <h3>B.E., Computer Science and Engineering</h3>
         <span>IFET Institute of Technology, Pondicherry · 2016–2020</span>
       </div>
       <div class="ed-item">
-        <h4>Networking Engineering Training</h4>
+        <h3>Networking Engineering Training</h3>
         <span>Sansbound Networking School, Chennai · 6 months</span>
       </div>
       <div class="ed-item">
-        <h4>.NET / C# Training</h4>
+        <h3>.NET / C# Training</h3>
         <span>SLA Institute · 6 months</span>
       </div>
     </div>
@@ -740,7 +745,7 @@ header.top nav a, .mobile-menu-toggle, .btn, .contact-links a { -webkit-tap-high
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduceMotion && 'IntersectionObserver' in window) {
     const targets = document.querySelectorAll('section > .idx, section > .section-heading, .about-grid > *, .feature-project, .work-card, .skill-table, .job, .two-col, .contact-links');
-    document.documentElement.classList.add('js-motion');
+    // Keep initial content visible; observers may animate only when already supported.
     targets.forEach(el => el.classList.add('reveal'));
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -749,7 +754,7 @@ header.top nav a, .mobile-menu-toggle, .btn, .contact-links a { -webkit-tap-high
     }, {threshold:0.08, rootMargin:'0px 0px -30px 0px'});
     targets.forEach(el => observer.observe(el));
     // Reveal anything already in the viewport immediately.
-    targets.forEach(el => {if(el.getBoundingClientRect().top < window.innerHeight * .98) el.classList.add('is-visible');});
+    
   }
   // Indicate the section currently being read without altering navigation content.
   if ('IntersectionObserver' in window) {
