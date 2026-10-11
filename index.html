@@ -341,6 +341,44 @@ header.top .id{display:flex;flex-direction:column;align-items:flex-start;gap:5px
 header.top .brand-name{font-size:1.05rem;font-weight:650;letter-spacing:-.025em}
 header.top .brand-role{font-family:'IBM Plex Mono',monospace;font-size:.61rem;font-weight:400;letter-spacing:.065em;color:#9eb1c8;white-space:nowrap}
 @media(max-width:700px){header.top .brand-name{font-size:.98rem}header.top .brand-role{font-size:clamp(.51rem,2.15vw,.61rem)}header.top{min-height:72px}}
+
+/* Final UI/UX audit — restrained visual hierarchy and clearer section labels */
+.idx::before{content:none!important}
+.idx{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+section{padding-top:clamp(64px,6.5vw,88px);padding-bottom:clamp(64px,6.5vw,88px)}
+.section-heading{margin-bottom:26px;align-items:flex-start}
+.section-heading h2{line-height:1.18}
+.section-intro{max-width:42ch}
+.hero{padding-top:clamp(64px,7vw,94px);padding-bottom:clamp(70px,8vw,102px)}
+.hero-grid{gap:clamp(30px,4vw,60px)}
+.hero .lede{line-height:1.72}
+.about-copy p{line-height:1.78;margin-bottom:18px}
+.work-card,.feature-project,.about-aside,.schema{box-shadow:0 12px 34px rgba(0,0,0,.12)}
+.work-card:hover{transform:translateY(-3px)}
+.job{padding:28px 0}
+.contact-links{margin-top:22px}
+@media(max-width:700px){
+  html{scroll-padding-top:96px}
+  header.top{top:7px;min-height:68px}
+  .hero{padding:42px 20px 58px}
+  .hero-grid{gap:28px}
+  .hero .lede{line-height:1.65;margin-bottom:22px}
+  .hero-actions{margin-bottom:19px}
+  .meta-row{gap:9px 15px}
+  section{padding:54px 20px;scroll-margin-top:92px}
+  .idx{margin-bottom:12px;font-size:.69rem}
+  .section-heading{margin-bottom:22px;gap:10px}
+  .section-heading h2{font-size:clamp(1.75rem,7vw,2.15rem)}
+  .about-copy p{font-size:1rem;line-height:1.76;margin-bottom:17px}
+  .schema{padding:18px}
+  .node{margin-bottom:7px}
+  .connector{height:12px}
+  .work-card,.feature-project{padding:20px}
+  .skill-row .k,.skill-row .v{padding:13px 15px}
+  .job{padding:22px 0}
+  .contact-links a{width:100%;justify-content:center}
+}
+@media(max-width:360px){header.top .brand-role{font-size:.49rem;letter-spacing:0}.mobile-menu-toggle{width:42px;height:42px}}
 </style>
 </head>
 <body id="top">
@@ -403,7 +441,7 @@ header.top .brand-role{font-family:'IBM Plex Mono',monospace;font-size:.61rem;fo
 
 
 <section id="about" aria-labelledby="about-title">
-  <span class="idx mono">01 — introduction</span>
+  <span class="idx mono">ABOUT</span>
   <div class="section-heading"><h2 id="about-title">A little about me<span class="accent">.</span></h2><p class="section-intro mono">Developer mindset. Data engineering focus.</p></div>
   <div class="about-grid">
     <div class="about-copy">
@@ -421,7 +459,7 @@ header.top .brand-role{font-family:'IBM Plex Mono',monospace;font-size:.61rem;fo
   </div>
 </section>
 <section id="projects" aria-labelledby="projects-title">
-  <span class="idx mono">02 — selected work</span>
+  <span class="idx mono">WORK</span>
   <div class="section-heading"><h2 id="projects-title">What I work on<span class="accent">.</span></h2><p class="section-intro mono">Representative areas of experience — not public client case studies.</p></div>
   <article class="feature-project" aria-labelledby="realtime-search-title">
     <span class="feature-kicker">Featured project / Data Engineering + Search</span>
@@ -472,7 +510,7 @@ header.top .brand-role{font-family:'IBM Plex Mono',monospace;font-size:.61rem;fo
 </section>
 
 <section id="stack">
-  <span class="idx mono">03 — technical stack</span>
+  <span class="idx mono">TECHNICAL STACK</span>
   <h2>What I build with</h2>
   <div class="skill-table">
     <div class="skill-row">
@@ -511,7 +549,7 @@ header.top .brand-role{font-family:'IBM Plex Mono',monospace;font-size:.61rem;fo
 </section>
 
 <section id="experience">
-  <span class="idx mono">04 — experience</span>
+  <span class="idx mono">EXPERIENCE</span>
   <h2>Where I've worked</h2>
 
   <div class="job">
@@ -547,7 +585,7 @@ header.top .brand-role{font-family:'IBM Plex Mono',monospace;font-size:.61rem;fo
 </section>
 
 <section id="education">
-  <span class="idx mono">05 — education &amp; certifications</span>
+  <span class="idx mono">EDUCATION &amp; CERTIFICATIONS</span>
   <h2>Background</h2>
   <div class="two-col">
     <div>
@@ -575,7 +613,7 @@ header.top .brand-role{font-family:'IBM Plex Mono',monospace;font-size:.61rem;fo
 </section>
 
 <section id="contact" class="contact">
-  <span class="idx mono">06 — contact</span>
+  <span class="idx mono">CONTACT</span>
   <h2>Let’s build something <em>useful.</em></h2>
   <p class="lede" style="max-width:48ch">Interested in data engineering, backend systems, or a technical collaboration? I’d be glad to connect.</p>
   <div class="contact-links">
